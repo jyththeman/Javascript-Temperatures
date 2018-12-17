@@ -3,27 +3,31 @@
   <meta charset="utf-8">
   <title>Write a JavaScript program to convert temperatures to and from celsius, fahrenheit</title>
       <script>
+          
           function cToF(celsius) 
 {
-  const cTemp = celsius;
-  const cToFahr = cTemp * 9 / 5 + 32;
-  const message = `${cTemp}\xB0C is ${cToFahr} \xB0F.`;
-    document.write("Farenheit: ", message + " and ");
+    var num = prompt("please enter value: ");
+  var cTemp = num;
+  var cToFahr = cTemp * 9 / 5 + 32;
+    document.getElementById("result").innerHTML = cTemp+'\xB0C is ' + cToFahr + ' \xB0C. ';
 }
 
 function fToC(fahrenheit) 
 {
-  const fTemp = fahrenheit;
-  const fToCel = (fTemp - 32) * 5 / 9;
-  const message = `${fTemp}\xB0F is ${fToCel}\xB0C.`;
-    document.write("Celcius: ", message);    
-} 
-cToF(80);
-fToC(55);
+    var num = prompt("please enter value: ");
+  var fTemp = num;
+  var fToCel = (fTemp - 32) * 5 / 9;
+    document.getElementById("result").innerHTML = fTemp+'\xB0C is ' + fToCel + ' \xB0C. ';  
+}
 
       </script>
   </head>
   <body>
-    
+      <form>
+    <input type="button" onClick="cToF()" value="Celcius to Farenhiet"/>
+      <input type="button" onClick="fToC()" value="Farenhiet to Celcius"/>
+      </form>
+      <p>The result is : </p>
+      <span id = "result"></span>
 </body>
   </html>
